@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [ { "src": "*.js", "use": "@now/node" } ],
+  "routes": [
+    { "src": "/posts", "dest": "/posts.js" },
+    { "src": "/users", "methods": [ "POST" ], "dest": "/users.js" },
+    { "src": "/users/(?<id>[^/]*)", "dest": "/users.js?id=$id" }
+  ]
+}
